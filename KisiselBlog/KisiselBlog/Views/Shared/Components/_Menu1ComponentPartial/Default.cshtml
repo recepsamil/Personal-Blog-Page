@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Menu1>
+
+
+<div class="col-lg-4 js-custom-dots">
+   @foreach (var item in Model)
+   {
+      <a href="#" class="service-item link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
+         <div class="service-icon color-1 mb-4">
+            <i class="@item.Baslik"></i>
+         </div>
+         <!-- /.icon -->
+         <div class="service-contents">
+            <h3></h3>
+            <p>
+               @item.Aciklama
+            </p>
+         </div>
+         <!-- /.service-contents-->
+      </a>
+
+
+   }
+</div>

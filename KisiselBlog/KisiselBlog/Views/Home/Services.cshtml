@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Page Title -->
+<div class="page-title light-background">
+   <div class="container">
+      <h1>Hizmetler</h1>
+      <nav class="breadcrumbs">
+         <ol>
+            <li><a href="/Home/Index">Anasayfa</a></li>
+            <li class="current">Hizmetler</li>
+         </ol>
+      </nav>
+   </div>
+</div><!-- End Page Title -->
+<!-- About Section -->
+<!-- Tabs Section -->
+<section id="tabs" class="tabs section light-background">
+
+   <div class="container">
+      <div class="row gap-x-lg-4 justify-content-between">
+         @await Component.InvokeAsync("_Menu1ComponentPartial")
+         @await Component.InvokeAsync("_Menu2ComponentPartial")
+
+
+      </div>
+   </div>
+</section><!-- /Tabs Section -->
+

@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ciftc\\OneDrive\\Masa\u00FCst\u00FC\\YazilimaOrg_SertifikaProjeleri\\Kisisel Blog Sayfas\u0131\\KisiselBlog\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D7EB3194-11D3-4D62-9292-93471E50CEF7}|KisiselBlog\\KisiselBlog.csproj|c:\\users\\ciftc\\onedrive\\masa\u00FCst\u00FC\\yazilimaorg_sertifikaprojeleri\\kisisel blog sayfas\u0131\\kisiselblog\\kisiselblog\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D7EB3194-11D3-4D62-9292-93471E50CEF7}|KisiselBlog\\KisiselBlog.csproj|solutionrelative:kisiselblog\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ciftc\\OneDrive\\Masa\u00FCst\u00FC\\YazilimaOrg_SertifikaProjeleri\\Kisisel Blog Sayfas\u0131\\KisiselBlog\\KisiselBlog\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "KisiselBlog\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ciftc\\OneDrive\\Masa\u00FCst\u00FC\\YazilimaOrg_SertifikaProjeleri\\Kisisel Blog Sayfas\u0131\\KisiselBlog\\KisiselBlog\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "KisiselBlog\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-30T17:55:54.824Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

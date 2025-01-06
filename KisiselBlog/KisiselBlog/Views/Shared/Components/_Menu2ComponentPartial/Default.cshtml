@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Menu2>
+
+<div class="col-lg-8">
+   <div class="swiper init-swiper-tabs">
+      <script type="application/json" class="swiper-config">
+         {
+           "loop": true,
+           "speed": 600,
+           "autoHeight": true,
+           "autoplay": {
+             "delay": 5000
+           },
+           "slidesPerView": "auto",
+           "pagination": {
+             "el": ".swiper-pagination",
+             "type": "bullets",
+             "clickable": true
+           },
+           "breakpoints": {
+             "320": {
+               "slidesPerView": 1,
+               "spaceBetween": 40
+             },
+             "1200": {
+               "slidesPerView": 1,
+               "spaceBetween": 1
+             }
+           }
+         }
+      </script>
+      <div class="swiper-wrapper">
+         @foreach (var item in Model)
+         {
+            <div class="swiper-slide">
+               <img src="@item.Img" alt="Image" class="img-fluid">
+               <div class="p-4">
+                  <h3 class="text-black h5 mb-3">@item.Baslik</h3>
+                  <div class="row">
+                     <div class="col-lg-8">
+                        <p>
+                           <a href="@item.Aciklama1">Projeye Git</a>
+
+                        </p>
+                        <p>
+                           @item.Aciklama2
+                        </p>
+                     </div>
+                     <div class="col-lg-4">
+                        <ul class="list-unstyled list-check">
+                           <li>
+
+                              <script>
+
+                                 var kullanilanAraclar = "@item.Aciklama3";
+
+
+                                 var aracListesi = kullanilanAraclar.split('-');
+
+
+                                 aracListesi.forEach(function(arac) {
+                                     document.write(arac + "<br/>");
+                                 });
+                              </script>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         }
+
+      </div>
+   </div>
+</div>

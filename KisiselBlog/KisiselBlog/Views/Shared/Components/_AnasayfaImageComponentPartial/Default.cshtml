@@ -1,0 +1,12 @@
+﻿@model List<AnasayfaImage>
+
+
+<div class="swiper-wrapper">
+   @foreach (var item in Model)
+   {
+      <div class="swiper-slide">
+         <img src="@item.Image" alt="Image" class="img-fluid" style="border-radius:10px">
+      </div>
+
+   }
+</div>

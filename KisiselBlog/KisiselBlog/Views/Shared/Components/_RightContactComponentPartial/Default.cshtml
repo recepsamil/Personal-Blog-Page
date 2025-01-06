@@ -1,0 +1,28 @@
+﻿<link href="~/css/toast.css" rel="stylesheet" />
+<link href="~/css/toast.html" rel="stylesheet" />
+
+<div class="toast-container" id="toastContainer"></div>
+
+
+<script src="~/js/toast.js"></script>
+<div class="col-lg-8">
+   <form method="post" role="form" class="info" asp-controller="Home" id="toastForm">
+      <div class="row">
+         <div class="col-md-6 form-group">
+            <input type="text" name="AdSoyad" class="form-control" id="name" placeholder="Adınız Soyadınız..." required="">
+         </div>
+         <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="Mail" id="email" placeholder="Email Adresiniz..." required="">
+         </div>
+      </div>
+      <div class="form-group mt-3">
+         <input type="text" class="form-control" name="Konu" id="subject" placeholder="Konu" required="">
+      </div>
+      <div class="form-group mt-3">
+         <textarea class="form-control" name="Mesaj" placeholder="Mesajınız" required="" style="height:185px"></textarea>
+      </div>
+      <div class="text-center">
+         <button type="button" onclick="submitForm()">Gönder</button>
+      </div>
+   </form>
+</div>

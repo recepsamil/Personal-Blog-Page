@@ -1,0 +1,51 @@
+﻿@model List<BlogPost>
+
+
+
+<!-- Blog Posts Section -->
+<section id="blog-posts" class="blog-posts section">
+   <!-- Section Title -->
+   <div class="container section-title" data-aos="fade-up">
+      <p>Sosyal Medya</p>
+      <h2>Post</h2>
+   </div><!-- End Section Title -->
+   <div class="container">
+
+      <div class="row gy-4">
+
+         @foreach (var item in Model)
+         {
+            <div class="col-md-6 col-lg-4">
+               <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
+                  <a href="https://medium.com/@@ciftcirecep225" target="_blank" class="thumb d-block" style="border:solid 1px grey">
+                     <img src="@item.Image" alt="Image" class="img-fluid rounded">
+                     </a>
+
+                  <div class="post-content">
+                     <div class="meta">
+                        <a href="@item.KısaBaslik" class="cat"> MEDIUM</a> 
+                        <span class="date">@item.TarihBaslik</span>
+                     </div>
+                     <h3><a href="@item.KısaBaslik">@item.Baslik</a></h3>
+                     <p>
+                        @item.ParagrafBaslik
+                     </p>
+
+                     <div class="d-flex author align-items-center">
+                        <div class="pic">
+                           <img src="@item.TakımImg" alt="Image" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="author-name">
+                           <strong class="d-block">@item.AdSoyad</strong>
+                           <span class="">@item.Pozisyon</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         }
+      </div>
+   </div>
+</section>
+<!-- /Blog Posts Section -->

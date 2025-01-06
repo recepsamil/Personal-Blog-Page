@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Page Title -->
+<div class="page-title light-background">
+   <div class="container">
+      <h1>Hakkımda</h1>
+      <nav class="breadcrumbs">
+         <ol>
+            <li><a href="/Home/Index">Anasayfa</a></li>
+            <li class="current">Hakkımda</li>
+         </ol>
+      </nav>
+   </div>
+</div><!-- End Page Title -->
+<!-- About Section -->
+<section id="about" class="about section">
+
+   <div class="container">
+      <div class="row align-items-center justify-content-between">
+         <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2" data-aos="fade-up" data-aos-delay="400">
+            <div class="swiper init-swiper">
+               <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 40
+                      },
+                      "1200": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 1
+                      }
+                    }
+                  }
+               </script>
+               @await Component.InvokeAsync("_AnasayfaImageComponentPartial") 
+               <div class="swiper-pagination"></div>
+            </div>
+         </div>
+         @await Component.InvokeAsync("_AnasayfaComponentPartial")
+      </div>
+   </div>
+</section><!-- /About Section -->

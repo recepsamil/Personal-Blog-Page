@@ -1,0 +1,64 @@
+﻿@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="main">
+
+	<!-- About Section -->
+	<section id="about" class="about section">
+
+		<div class="container">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-lg-7 mb-5 mb-lg-0 order-lg-2" data-aos="fade-up" data-aos-delay="400">
+					<div class="swiper init-swiper">
+						<script type="application/json" class="swiper-config">
+							{
+							  "loop": true,
+							  "speed": 600,
+							  "autoplay": {
+								 "delay": 5000
+							  },
+							  "slidesPerView": "auto",
+							  "pagination": {
+								 "el": ".swiper-pagination",
+								 "type": "bullets",
+								 "clickable": true
+							  },
+							  "breakpoints": {
+								 "320": {
+									"slidesPerView": 1,
+									"spaceBetween": 40
+								 },
+								 "1200": {
+									"slidesPerView": 1,
+									"spaceBetween": 1
+								 }
+							  }
+							}
+						</script>
+						@await Component.InvokeAsync("_AnasayfaImageComponentPartial")
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				@await Component.InvokeAsync("_AnasayfaComponentPartial")
+			</div>
+		</div>
+	</section><!-- /About Section -->
+	<!-- About 2 Section -->
+	@await Component.InvokeAsync("_BlogPostComponentPartial")
+
+	<!-- Tabs Section -->
+	<section id="tabs" class="tabs section light-background">
+
+		<div class="container">
+			<div class="row gap-x-lg-4 justify-content-between">
+				@await Component.InvokeAsync("_Menu1ComponentPartial")
+				@await Component.InvokeAsync("_Menu2ComponentPartial")
+
+
+			</div>
+		</div>
+	</section><!-- /Tabs Section -->
+</main>
+

@@ -1,0 +1,65 @@
+﻿@model List<Referans>
+<hr style="border:solid 1px grey; width:100% !important;" />
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section">
+   <!-- Section Title -->
+   <div class="container section-title" data-aos="fade-up">
+      <h2>Ne Söylediler...</h2>
+   </div><!-- End Section Title -->
+
+   <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+         <div class="col-lg-7">
+            <div class="swiper init-swiper">
+               <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 40
+                      },
+                      "1200": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 1
+                      }
+                    }
+                  }
+               </script>
+               <div class="swiper-wrapper">
+                  @foreach (var item in Model)
+                  {
+                     <div class="swiper-slide">
+                        <div class="testimonial mx-auto">
+                           <figure class="img-wrap">
+                              <img src="@item.Img" alt="Image" class="img-fluid">
+                           </figure>
+                           <h3 class="name">@item.AdSoyad</h3>
+                           <blockquote>
+                              <p>
+                                 @item.Block
+                              </p>
+                           </blockquote>
+                        </div>
+                     </div>
+                  }
+
+               </div>
+               <div class="swiper-pagination"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- /Testimonials Secon -->

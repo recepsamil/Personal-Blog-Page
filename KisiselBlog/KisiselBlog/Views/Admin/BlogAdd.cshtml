@@ -1,0 +1,54 @@
+﻿@model BlogPost
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div style="display:flex;flex-direction:column;justify-content:center;align-items: center;">
+   <div style="border:solid 1px grey;padding:25px 200px">
+
+      <h2>Yeni Blog Ekleme Formu</h2>
+      <form asp-action="BlogAdd" method="post" enctype="multipart/form-data">
+         <table>
+            <tr>
+               <td><input type="hidden" name="BlogPostsID" /></td>
+            </tr>
+            <tr>
+               <td><label for="ImageFile">Resim:</label></td>
+               <td><input type="file" style="width:500px" id="ImageFile" name="ImageFile" required></td>
+            </tr>
+            <tr>
+               <td><label for="KısaBaslik">Url:</label></td>
+               <td><input type="text" style="width:500px" id="KısaBaslik" name="KısaBaslik" required></td>
+            </tr>
+            <tr>
+               <td><label for="TarihBaslik">Eklenme Tarihi:</label></td>
+               <td><input type="text" style="width:500px" id="TarihBaslik" name="TarihBaslik" required></td>
+            </tr>
+            <tr>
+               <td><label for="Baslik">DateTitle:</label></td>
+               <td><input type="text" style="width:500px" id="Baslik" name="Baslik" required></td>
+            </tr>
+            <tr>
+               <td><label for="ParagrafBaslik">Başlık:</label></td>
+               <td><input type="text" style="width:500px" id="ParagrafBaslik" name="ParagrafBaslik" required></td>
+            </tr>
+            <tr>
+               <td><label for="TakımImgFile">Ekip Resim:</label></td>
+               <td><input type="file" style="width:500px" id="TakımImgFile" name="TakımImgFile" required></td>
+            </tr>
+            <tr>
+               <td><label for="AdSoyad">AdSoyad:</label></td>
+               <td><input type="text" style="width:500px" id="AdSoyad" name="AdSoyad" required></td>
+            </tr>
+            <tr>
+               <td><label for="Pozisyon">Unvan:</label></td>
+               <td><input type="text" style="width:500px" id="Pozisyon" name="Pozisyon" required></td>
+            </tr>
+         </table>
+         <button type="submit" class="btn" style="width:100%;background-color: orange;margin-top:15px">Ekle</button>
+      </form>
+   </div>
+</div>

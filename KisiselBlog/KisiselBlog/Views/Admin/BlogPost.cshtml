@@ -1,0 +1,135 @@
+﻿
+
+@model List<BlogPost>
+@{
+   ViewData["Title"] = "BlogPost";
+   Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+   .shortened {
+      max-width: 250px; /* İstediğiniz maksimum genişliği ayarlayın */
+      white-space: nowrap; /* Metni tek satırda tut */
+      overflow: hidden; /* Taşan metni gizle */
+      text-overflow: ellipsis; /* Taşan metin için "..." ekle */
+   }
+
+
+
+   .img-zoom {
+      width: 500px; /* Resmin normal genişliği */
+      height: auto; /* Yüksekliği otomatik ayarlar */
+      cursor: pointer; /* Tıklanabilir işareti */
+   }
+
+   /* Popup için stil */
+   .popup {
+      display: none; /* Başlangıçta gizli */
+      position: fixed; /* Sayfanın üzerinde yer alır */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Koyu arka plan */
+      justify-content: center; /* Ortalar */
+      align-items: center; /* Ortalar */
+   }
+
+      .popup img {
+         max-width: 100%; /* Maksimum genişlik %90 */
+         max-height: 100%; /* Maksimum yükseklik %90 */
+      }
+
+   .close {
+      position: absolute; /* Kapatma butonunun konumu */
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer; /* Tıklanabilir işareti */
+   }
+</style>
+
+<div class="row mb-2">
+   <div class="col-lg-12">
+      <div class="card">
+         <div class="card-body">
+            <h5 class="card-title mb-4">BlogPost İşlemleri</h5>
+            <div class="table-responsive">
+               <table class="table center-aligned-table">
+                  <thead>
+                     <tr class="text-primary">
+                        <th class="col-md-1">Sıra</th>
+                        <th class="col-md-1">Resim</th>
+                        <th class="col-md-1">Url</th>
+                        <th class="col-md-1">Eklenme Tarihi</th>
+                        <th class="col-md-1">Link Adı</th>
+                        <th class="col-md-1">Başlık</th>
+                        <th class="col-md-1">Ekip ResimLink</th>
+                        <th class="col-md-1">AdSoyad</th>
+                        <th class="col-md-1">Unvan</th>
+                        <th class="col-md-1">İşlemler</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     @{
+                        var count = 0;
+                     }
+                     @foreach (var item in Model)
+                     {
+                        count++;
+                        <tr>
+                           <td class="col-md-1">@count</td>
+                           <td class="col-md-1"><img class="img-zoom" src="@item.Image" style="width:50px;height:50px;border:solid 1px black" onclick="openPopup(this.src)" /></td>
+                           <td class="col-md-1 shortened">@item.KısaBaslik</td>
+                           <td class="col-md-1">@item.TarihBaslik</td>
+                           <td class="col-md-1">@item.Baslik</td>
+                           <td class="col-md-1 shortened">@item.ParagrafBaslik</td>
+                           <td class="col-md-1 shortened">@item.TakımImg</td>
+                           <td class="col-md-1">@item.AdSoyad</td>
+                           <td class="col-md-1">@item.Pozisyon</td>
+                           <td class="col-md-1">
+                              <a href="/Admin/BlogUpdate/@item.BlogPostID" class="btn btn-primary btn-sm">Güncelle</a>
+                              <a href="/Admin/BlogDelete/@item.BlogPostID"
+                                 onclick="return confirm('Bu blog yazısını silmek istediğinizden emin misiniz?');"
+                                 class="btn btn-danger btn-sm">
+                                 Sil
+                              </a>
+
+                           </td>
+                        </tr>
+                     }
+                  </tbody>
+               </table>
+              <a href="/Admin/BlogAdd/" class="btn btn-success">Yeni Blog Ekle</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<!-- Popup Yapısı -->
+<div class="popup" id="imagePopup">
+   <span class="close" onclick="closePopup()">&times;</span>
+   <img id="popupImage" src="" alt="Büyük Resim" />
+   <script>
+      document.getElementById('imagePopup').onclick = function (event) {
+         if (event.target === this) {
+            closePopup();
+         }
+      };
+   </script>
+</div>
+
+<script>
+   function openPopup(imageSrc) {
+      document.getElementById('popupImage').src = imageSrc;
+      document.getElementById('imagePopup').style.display = 'flex'; // Popup'ı gösterir
+   }
+
+   function closePopup() {
+      document.getElementById('imagePopup').style.display = 'none'; // Popup'ı gizler
+   }
+</script>
+

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Misyon>
+
+@foreach (var item in Model)
+{
+   <!-- About 2 Section -->
+   <section id="about-2" class="about-2 section light-background">
+
+      <div class="container">
+         <div class="content">
+            <div class="row justify-content-center">
+               <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 order-lg-2 offset-xl-1 mb-4">
+                  <div class="img-wrap text-center text-md-left" data-aos="fade-up" data-aos-delay="100">
+                     <div class="img">
+                        <img src="@item.MisyonImage" alt="circle image" class="img-fluid">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="offset-md-0 offset-lg-1 col-sm-12 col-md-5 col-lg-5 col-xl-4" data-aos="fade-up">
+                  <div class="px-3">
+                     <span class="content-subtitle">Misyonum</span>
+                     <h2 class="content-title text-start">
+                        @item.Misyon1
+                     </h2>
+                     <p class="lead">
+                        @item.Misyon2
+                     </p>
+                     <p>
+                        <a href="#" class="btn-get-started">Bana ulaşın</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- /About 2 Section -->
+}

@@ -1,0 +1,38 @@
+﻿@model List<LeftContact>
+
+@foreach (var item in Model)
+{
+      <div class="col-lg-4">
+
+         <div class="info">
+            <h3>@item.Baslik</h3>
+            <p>@item.Aciklama</p>
+
+            <div class="info-item d-flex">
+               <i class="bi bi-geo-alt flex-shrink-0"></i>
+               <div>
+                  <h4>Lokasyon:</h4>
+                  <p>@item.Konum</p>
+               </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex">
+               <i class="bi bi-envelope flex-shrink-0"></i>
+               <div>
+                  <h4>Mail:</h4>
+                  <p>@item.Mail</p>
+               </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex">
+               <i class="bi bi-phone flex-shrink-0"></i>
+               <div>
+                  <h4>Telefon:</h4>
+                  <p>@item.Telefon</p>
+               </div>
+            </div><!-- End Info Item -->
+
+         </div>
+
+      </div>
+}
